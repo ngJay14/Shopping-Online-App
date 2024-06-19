@@ -128,9 +128,10 @@ namespace shoppingApp.Classes
         public Image getImage(string url)
         {
             Image img;
-            var stream = File.OpenRead(url);
-            img = new Bitmap(stream);
-
+            using (var stream = File.OpenRead(url))
+            {
+                img = new Bitmap(stream);
+            }
             return img;
 
         }

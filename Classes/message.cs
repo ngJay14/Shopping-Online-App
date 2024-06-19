@@ -66,6 +66,15 @@ namespace shoppingApp.Classes
         public string addProdsMess11 = "Please choose images for product !";
         public string addProdsMess12 = "Description of product is required !";
         public string addProdsMess13 = "Are you sure to delete this product ?";
+        public string addProdsMess14 = "Product has been updated !";
+        public string addProdsMess15 = "Please choose a product !";
+        public string addProdsMess16 = "Product has been deleted !";
+
+        public string addProdsMess17 = "You can insert or delete any image file in this folder. Syntax of filename must be 'prod_[product_id]_[sequence_of_image].'";
+        public string addProdsMess18 = "Edit image files of product";
+        public string addProdsMess19 = "Choose images for product.'";
+        public string addProdsMess20 = "Select images";
+
 
 
         // Messages in product detail form

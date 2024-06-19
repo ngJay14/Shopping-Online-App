@@ -118,7 +118,6 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.dateTimePicker1);
@@ -147,6 +146,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtProdName);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(815, 528);
@@ -165,6 +165,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(498, 237);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -205,6 +206,7 @@
             // 
             // btnChoose
             // 
+            this.btnChoose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChoose.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnChoose.Location = new System.Drawing.Point(719, 317);
             this.btnChoose.Name = "btnChoose";
@@ -324,6 +326,7 @@
             // 
             // pnStatus
             // 
+            this.pnStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnStatus.Controls.Add(this.label4);
             this.pnStatus.Controls.Add(this.radBtnSta1);
             this.pnStatus.Controls.Add(this.radBtnSta2);
@@ -443,6 +446,8 @@
             // 
             // rchTxtProdDes
             // 
+            this.rchTxtProdDes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rchTxtProdDes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rchTxtProdDes.Location = new System.Drawing.Point(16, 376);
             this.rchTxtProdDes.Name = "rchTxtProdDes";
@@ -615,6 +620,8 @@
             // 
             // grViewProducts
             // 
+            this.grViewProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.grViewProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grViewProducts.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.grViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grViewProducts.Dock = System.Windows.Forms.DockStyle.Fill;

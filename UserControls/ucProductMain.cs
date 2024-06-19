@@ -35,7 +35,7 @@ namespace shoppingApp.UserControls
         public string ImageUrl
         {
             get { return imageUrl; }
-            set { imageUrl = value; pcProdImage.Image = Image.FromFile(imageUrl); }
+            set { imageUrl = value; pcProdImage.Image = comm.getImage(imageUrl); }
         }
         public string ProdName
         {

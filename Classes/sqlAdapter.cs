@@ -1,22 +1,7 @@
-﻿using Guna.UI2.WinForms.Suite;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Security;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Xml.Linq;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using System.Net;
-using System.Security.Cryptography;
-using Microsoft.Reporting.Map.WebForms.BingMaps;
 
 namespace shoppingApp.Classes
 {
@@ -303,7 +288,11 @@ namespace shoppingApp.Classes
                 cmd.Parameters.AddWithValue("@images_url", imagesUrl);
                 cmd.Parameters.AddWithValue("@status", status);
                 cmd.Parameters.AddWithValue("@category_id", categoryId);
-                cmd.Parameters.AddWithValue("@end_day", end_day);
+
+                if (discount == 0)
+                    cmd.Parameters.AddWithValue("@end_day", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@end_day", end_day);
 
                 cmd.ExecuteNonQuery();
 
@@ -360,9 +349,19 @@ namespace shoppingApp.Classes
             return dt;
         }
 
+        public DataTable getProductsByStatus(bool status)
+        {
+            adapter = new SqlDataAdapter("select * from [product] where status = '"+ status +"'", conns);
+
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            return dt;
+        }
+
         public DataTable getAllDiscountProduct()
         {
-            adapter = new SqlDataAdapter("select * from [product] where discount > 0", conns);
+            adapter = new SqlDataAdapter("select * from [product] where discount > 0 and status = 'true'", conns);
 
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -372,7 +371,7 @@ namespace shoppingApp.Classes
 
         public DataTable getProductsBySex(bool male)
         {
-            adapter = new SqlDataAdapter("select * from [product] where sex = '" + male + "'", conns);
+            adapter = new SqlDataAdapter("select * from [product] where sex = '" + male + "' and status = 'true'", conns);
 
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -468,6 +467,75 @@ namespace shoppingApp.Classes
                 MessageBox.Show(e.Message);
                 return false;
             }
+        }
+
+        public bool updateProductById(int id, string name, string sub_text, string description, int price, int discount, int quantity,
+            bool sex, string images_url, bool status, string size, int category_id, DateTime end_day)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(conns);
+
+                string q = "update [product] set name = @name, sub_text = @sub_text, description = @description, price = @price, discount = @discount, " +
+                    "quantity = @quantity, sex = @sex, images_url = @images_url, status = @status, size = @size, category_id = @category_id, end_day = @end_day where id = @id";
+                SqlCommand cmd = new SqlCommand(q, conn);
+
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@sub_text", sub_text);
+                cmd.Parameters.AddWithValue("@description", description);
+                cmd.Parameters.AddWithValue("@price", price);
+                cmd.Parameters.AddWithValue("@discount", discount);
+                cmd.Parameters.AddWithValue("@quantity", quantity);
+                cmd.Parameters.AddWithValue("@sex", sex);
+                cmd.Parameters.AddWithValue("@images_url", images_url);
+                cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@size", size);
+                cmd.Parameters.AddWithValue("@category_id", category_id);
+
+                if (discount == 0)
+                    cmd.Parameters.AddWithValue("@end_day", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@end_day", end_day);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return false;
+            }
+
+            return true;
+
+        }
+
+        public bool updateProductImagesById(int id, string images_url)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(conns);
+
+                string q = "update [product] set images_url = @images_url where id = @id";
+                SqlCommand cmd = new SqlCommand(q, conn);
+
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@images_url", images_url);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return false;
+            }
+
+            return true;
+
         }
 
         // Queries of cart table

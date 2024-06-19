@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,6 +27,7 @@ namespace shoppingApp.Forms
         common comm = new common();
 
         int prod_id = -1;
+        bool status = false, sex = false;
 
         private void addProdsForm_Load(object sender, EventArgs e)
         {
@@ -47,6 +50,7 @@ namespace shoppingApp.Forms
             txtPrice.Clear();
             txtDiscount.Clear();
             txtQuantity.Clear();
+            txtSize.Clear();
             radBtnSta1.Checked = false;
             radBtnSta2.Checked = false;
             radBtnSex1.Checked = false;
@@ -203,10 +207,36 @@ namespace shoppingApp.Forms
         // Button update click event
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (checkValInfo())
+            if (prod_id != -1)
             {
+                // Published => status = true, Draft => status = false
+                if (radBtnSta1.Checked)
+                    status = true;
 
+                // Male => sex = true, Female => sex = false
+                if (radBtnSex1.Checked)
+                    sex = true;
+
+                string rootdir = $"prod_images//prod_{prod_id}";
+
+                // get the list of files
+                string[] files = Directory.GetFiles(rootdir);
+                //Console.WriteLine(String.Join(Environment.NewLine, files));
+                List<string> list = files.ToList();
+
+                if (checkValInfo())
+                {
+                    if (sql.updateProductById(prod_id, txtProdName.Text, txtSubText.Text, rchTxtProdDes.Text, int.Parse(txtPrice.Text), int.Parse(txtDiscount.Text),
+                        int.Parse(txtQuantity.Text), sex, string.Join(",", list), status, txtSize.Text, int.Parse(cbBoxCates.SelectedValue.ToString()), dateTimePicker1.Value))
+                    {
+                        MessageBox.Show(mess.addProdsMess14);
+
+                        addProdsForm_Load(sender, e);
+                    }
+                }
             }
+            else
+                MessageBox.Show(mess.addProdsMess15);
         }
 
         // Button insert click event
@@ -214,8 +244,6 @@ namespace shoppingApp.Forms
         {
             if (checkValInfo())
             {
-                bool status = false, sex = false;
-
                 // Published => status = true, Draft => status = false
                 if (radBtnSta1.Checked)
                     status = true;
@@ -230,13 +258,13 @@ namespace shoppingApp.Forms
                 // Create image folder and copy images of product
 
                 Product prod = sql.getProdOrderByDesc();
-                string foldPath = $"prod_images//prod_{prod.Id + 1}";
+                string foldPath = $"prod_images//prod_{prod.Id}";
                 Directory.CreateDirectory(foldPath);
                 int i = 0;
 
                 foreach (var f in files)
                 {
-                    string imaPath = getProdImageUrl(foldPath, prod.Id + 1, i);
+                    string imaPath = getProdImageUrl(foldPath, prod.Id, i);
                     listImages.Add(imaPath);
                     File.Copy(f, imaPath);
                     i++;
@@ -265,22 +293,59 @@ namespace shoppingApp.Forms
                 {
                     if (sql.deleteProductById(prod_id))
                     {
-                        MessageBox.Show(mess.addCateMess3);
+                        MessageBox.Show(mess.addProdsMess16);
 
                         addProdsForm_Load(sender, e);
                     }
                 }
             }
             else
-                MessageBox.Show(mess.addCateMess5);
+                MessageBox.Show(mess.addProdsMess15);
         }
 
         // Button choose images click event
         private void btnChoose_Click(object sender, EventArgs e)
         {
-            if (ofd.ShowDialog() == DialogResult.OK)
+            string[] images_url;
+            string rootdir = "";
+
+            ofd.Filter = "Image Files|*.BMP;*.GIF;*.JPG;*.JPEG;*.PNG|All files (*.*)|*.*";
+            //To set default to "All files", set the property to 2
+            ofd.FilterIndex = 2;
+
+
+            if (prod_id != -1)
             {
-                foreach (String filePath in ofd.FileNames)
+                ofd.Title = mess.addProdsMess17;
+                ofd.FileName = mess.addProdsMess18;
+                rootdir = $"prod_images//prod_{prod_id}";
+                ofd.InitialDirectory = Path.GetFullPath(rootdir);
+            }
+            else
+            {
+                ofd.Title = mess.addProdsMess19;
+                ofd.FileName = mess.addProdsMess20;
+                ofd.InitialDirectory = @"D:\Downloads";
+            }
+
+            ofd.ShowDialog();
+
+            if (prod_id != -1)
+            {
+                // get the list of files
+                string[] files = Directory.GetFiles(rootdir);
+                images_url = files;
+
+                sql.updateProductImagesById(prod_id, string.Join(",", images_url.ToList()));
+
+            }
+            else
+                images_url = ofd.FileNames;
+
+            if (!images_url.Contains(mess.addProdsMess20) && !images_url.Contains(mess.addProdsMess18))
+            {
+                flPnImages.Controls.Clear();
+                foreach (string filePath in images_url)
                 {
                     PictureBox pictureBox = new PictureBox();
                     pictureBox.Size = new Size(40, 40);
@@ -323,13 +388,16 @@ namespace shoppingApp.Forms
 
             txtPrice.Text = grViewProducts.CurrentRow.Cells[4].Value.ToString();
             txtDiscount.Text = grViewProducts.CurrentRow.Cells[5].Value.ToString();
-            txtSize.Text = grViewProducts.CurrentRow.Cells[11].Value.ToString();
+            txtSize.Text = grViewProducts.CurrentRow.Cells[10].Value.ToString();
             txtQuantity.Text = grViewProducts.CurrentRow.Cells[6].Value.ToString();
 
             if ((bool)grViewProducts.CurrentRow.Cells[7].Value)
                 radBtnSex1.Checked = true;
             else
                 radBtnSex2.Checked = true;
+
+            if (grViewProducts.CurrentRow.Cells[12].Value != DBNull.Value)
+                dateTimePicker1.Value = (DateTime)grViewProducts.CurrentRow.Cells[12].Value;
 
             List<string> list = grViewProducts.CurrentRow.Cells[8].Value.ToString().Replace(" ", "").Split(',').ToList();
 

@@ -91,12 +91,8 @@ namespace shoppingApp.Forms
             cbSize.DataSource = bs;
 
             List<string> imagesUrl = prod.ImagesUrl.Split(',').ToList();
-            System.Drawing.Image img;
-            using (var stream = File.OpenRead(imagesUrl[0]))
-            {
-                img = new Bitmap(stream);
-            }
-            pcMain.Image = img;
+
+            pcMain.Image = comm.getImage(imagesUrl[0]);
 
             foreach (var image in imagesUrl)
             {

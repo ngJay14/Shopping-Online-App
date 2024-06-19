@@ -381,7 +381,7 @@ namespace shoppingApp.Forms
                     {
                         PictureBox pictureBox = new PictureBox();
                         pictureBox.Size = new Size(60, 60);
-                        pictureBox.Image = System.Drawing.Image.FromFile(filePath);
+                        pictureBox.Image = comm.getImage(filePath);
                         pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
 
                         flPnChosenImages.Controls.Add(pictureBox);

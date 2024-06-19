@@ -106,6 +106,7 @@
             // 
             // pcAva
             // 
+            this.pcAva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcAva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pcAva.Location = new System.Drawing.Point(522, 228);
             this.pcAva.Name = "pcAva";
@@ -117,6 +118,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(447, 268);

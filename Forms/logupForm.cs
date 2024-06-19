@@ -163,7 +163,7 @@ namespace shoppingApp.Forms
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                pcAva.Image = Image.FromFile(ofd.FileName);
+                pcAva.Image = com.getImage(ofd.FileName);
             }
         }
 
