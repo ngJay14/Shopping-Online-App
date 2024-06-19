@@ -102,10 +102,11 @@ namespace shoppingApp.Classes
                 mail.IsBodyHtml = true;
                 mail.Subject = subject;
                 mail.Body = body;
-                mail.Attachments.Add(new Attachment(filePath));
+
+                if (filePath != null)
+                    mail.Attachments.Add(new Attachment(filePath));
 
                 smtp.Send(mail);
-                MessageBox.Show(mess.sendEmailMess, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

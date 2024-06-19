@@ -21,6 +21,7 @@ namespace shoppingApp.Classes
         public string logupMess9 = "Invalid email !";
         public string logupMess10 = "Password is required !";
         public string logupMess11 = "Sign up successfully !";
+        public string logupMess12 = "Email has existed !";
 
 
         // Messages in login form
@@ -28,7 +29,7 @@ namespace shoppingApp.Classes
         public string loginMess2 = "Password has sent to your email address!";
         public string loginMess3 = "Email not found. Please check again !";
         public string loginMess4 = "Your password is ";
-        public string loginMess5 = "CHATOO - FORGET PASSWORD";
+        public string loginMess5 = "SHON - FORGET PASSWORD";
 
 
         // Messages in main form

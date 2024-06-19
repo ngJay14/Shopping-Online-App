@@ -65,6 +65,7 @@ namespace shoppingApp.Forms
             {
                 comm.sendEmail(email, mess.subjectEmail1, mess.bodyEmail1, getProdImageUrl());
 
+                MessageBox.Show(mess.sendEmailMess, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
                 MessageBox.Show(mess.transactionMess1);

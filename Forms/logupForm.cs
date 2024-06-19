@@ -97,6 +97,11 @@ namespace shoppingApp.Forms
                 error.SetError(txtEmail, mess.logupMess9);
                 return false;
             }
+            else if (sql.checkExistEmail(txtEmail.Text.Trim()))
+            {
+                error.SetError(txtEmail, mess.logupMess12);
+                return false;
+            }
             else
                 error.SetError(txtEmail, string.Empty);
 

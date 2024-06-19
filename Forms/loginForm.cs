@@ -133,9 +133,25 @@ namespace shoppingApp.Forms
             {
                 return;
             }
+            else
+            {
+                if(sql.checkExistEmail(txtEmail.Text.Trim()))
+                {
+                    string pass = sql.getPasswordByEmail(txtEmail.Text.Trim());
+                    com.sendEmail(txtEmail.Text.Trim(), mess.loginMess5, mess.loginMess4 + pass, null);
+                    txtEmail.Clear();
+
+                    MessageBox.Show(mess.loginMess2);
+                }
+                else
+                {
+                    MessageBox.Show(mess.loginMess3);
+                    return;
+                }
+            }
 
             // Send password to email
-            MessageBox.Show("log in ok");
+            
         }
 
         // Form load event

@@ -178,6 +178,40 @@ namespace shoppingApp.Classes
             }
         }
 
+        public bool checkExistEmail(string email)
+        {
+            adapter = new SqlDataAdapter("select * from [user] where email = '" + email + "'", conns);
+
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+                return true;
+
+            return false;
+        }
+
+        public string getPasswordByEmail(string email)
+        {
+            string pass = string.Empty;
+
+            adapter = new SqlDataAdapter("select * from [user] where email = '" + email + "'", conns);
+
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    pass = dr["password"].ToString();
+                    break;
+                }
+            }
+
+            return pass;
+        }
+
 
         // Queries of category table
         public bool insertCategory(string categroryName, string categoryDes)
@@ -356,7 +390,7 @@ namespace shoppingApp.Classes
 
         public DataTable getProductsByStatus(bool status)
         {
-            adapter = new SqlDataAdapter("select * from [product] where status = '"+ status +"'", conns);
+            adapter = new SqlDataAdapter("select * from [product] where status = '" + status + "'", conns);
 
             DataTable dt = new DataTable();
             adapter.Fill(dt);
