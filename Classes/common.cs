@@ -27,6 +27,7 @@ namespace shoppingApp.Classes
     internal class common
     {
         private message mess = new message();
+
         // Check valid email
         public bool ValidateEmail(string email)
         {

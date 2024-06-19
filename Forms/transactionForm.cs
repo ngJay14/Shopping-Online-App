@@ -101,6 +101,9 @@ namespace shoppingApp.Forms
                 txtAddress.Text = dt.Rows[0]["ship_address"].ToString();
                 txtAddress.ReadOnly = true;
 
+                txtPhoneNum.Text = dt.Rows[0]["phone"].ToString();
+                txtPhoneNum.ReadOnly = true;
+
                 rchTxtNote.Text = dt.Rows[0]["note"].ToString();
                 rchTxtNote.ReadOnly = true;
 
@@ -124,6 +127,32 @@ namespace shoppingApp.Forms
             return total;
         }
 
+        // Check validated informations
+        private bool checkValInfo()
+        {
+            // Check empty value of ship address textbox
+            if (string.IsNullOrEmpty(txtAddress.Text.Trim()))
+            {
+                error.SetError(txtAddress, mess.transactionMess2);
+                return false;
+            }
+            else
+                error.SetError(txtAddress, string.Empty);
+
+
+            // Check empty value of phone number textbox
+            if (string.IsNullOrEmpty(txtPhoneNum.Text.Trim()))
+            {
+                error.SetError(txtPhoneNum, mess.transactionMess3);
+                return false;
+            }
+            else
+                error.SetError(txtPhoneNum, string.Empty);
+
+
+            return true;
+        }
+
         // Form load event
         public void orderForm_Load(object sender, EventArgs e)
         {
@@ -134,36 +163,39 @@ namespace shoppingApp.Forms
 
         private void btnConDischarge_Click(object sender, EventArgs e)
         {
-            bool check = sql.insertOrder(username, DateTime.Now, calToltal(), cbBoxPayMethod.SelectedIndex, txtAddress.Text, rchTxtNote.Text);
-            if (check)
+            if (checkValInfo())
             {
-                foreach (ucCartItem item in flPnItems.Controls)
+                bool check = sql.insertOrder(username, DateTime.Now, calToltal(), cbBoxPayMethod.SelectedIndex, txtAddress.Text, rchTxtNote.Text);
+                if (check)
                 {
-                    if (!sql.insertOrderItem(sql.getOrderIdOrderByDesc(), item.ProdId, item.Quantity, item.ImageUrl, item.ProdSize))
+                    foreach (ucCartItem item in flPnItems.Controls)
                     {
-                        MessageBox.Show(mess.transactionMess1);
-                        return;
+                        if (!sql.insertOrderItem(sql.getOrderIdOrderByDesc(), item.ProdId, item.Quantity, item.ImageUrl, item.ProdSize))
+                        {
+                            MessageBox.Show(mess.transactionMess1);
+                            return;
+                        }
                     }
+
+                    sql.deleteAllCartItemsById(username);
+                }
+                else
+                {
+                    MessageBox.Show(mess.transactionMess1);
+                    return;
                 }
 
-                sql.deleteAllCartItemsById(username);
+                string flow = "Invoice";
+                parentForm.setTxtFlows(flow);
+
+                invoiceForm invoiceFrm = new invoiceForm();
+                invoiceFrm.username = username;
+                invoiceFrm.order_id = sql.getOrderIdOrderByDesc();
+
+                invoiceFrm.MdiParent = parentForm;
+                invoiceFrm.Dock = DockStyle.Fill;
+                invoiceFrm.Show();
             }
-            else
-            {
-                MessageBox.Show(mess.transactionMess1);
-                return;
-            }
-
-            string flow = "Invoice";
-            parentForm.setTxtFlows(flow);
-
-            invoiceForm invoiceFrm = new invoiceForm();
-            invoiceFrm.username = username;
-            invoiceFrm.order_id = sql.getOrderIdOrderByDesc();
-
-            invoiceFrm.MdiParent = parentForm;
-            invoiceFrm.Dock = DockStyle.Fill;
-            invoiceFrm.Show();
         }
     }
 }

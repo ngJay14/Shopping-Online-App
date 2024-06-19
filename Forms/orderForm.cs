@@ -38,6 +38,7 @@ namespace shoppingApp.Forms
                     order.Payment = (int)dr["payment"];
                     order.Total = (int)dr["total"];
                     order.Date = (DateTime)dr["date"];
+                    order.Status = (int)dr["status"];
                     order.AddEventInfoBtnClick += (sender, e) =>
                         {
                             string flow = "Your orders > Order details";

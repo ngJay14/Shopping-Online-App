@@ -267,6 +267,9 @@
     <EmbeddedResource Include="Forms\invoiceForm.resx">
       <DependentUpon>invoiceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\manageOrderForm.resx">
+      <DependentUpon>manageOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\orderForm.resx">
       <DependentUpon>orderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -478,6 +481,8 @@
     <None Include="Resources\image.png" />
     <None Include="Resources\emotional.png" />
     <None Include="Resources\send.png" />
+    <None Include="Resources\bill_30px.png" />
+    <None Include="Resources\statistics_30px.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -25,6 +25,7 @@ namespace shoppingApp.UserControls
         private string shipAddress;
         private int payment;
         private int total;
+        private int status;
         private DateTime date;
 
         public int OrderId
@@ -106,6 +107,29 @@ namespace shoppingApp.UserControls
             set { quantity = value; lbQuantity.Text = "X" + quantity.ToString(); }
         }
 
+        public int Status 
+        {
+            get { return status; }
+            set { status = value; lbStatus.Text = setStatus(); }
+        }
+
+        private string setStatus()
+        {
+            switch (status)
+            { 
+                case 0:
+                    return "Processing";
+                case 1:
+                    return "Shipped";
+                case 2:
+                    return "In transit";
+                case 3:
+                    return "Delivered";
+            }
+
+
+            return "";
+        }
         public int getTotal()
         {
             return (price - (price * discount / 100)) * quantity;

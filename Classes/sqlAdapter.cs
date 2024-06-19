@@ -1,7 +1,12 @@
-﻿using System;
+﻿using Guna.UI2.WinForms.Suite;
+using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace shoppingApp.Classes
 {
@@ -814,8 +819,66 @@ namespace shoppingApp.Classes
 
             DataTable dt = new DataTable();
             adapter.Fill(dt);
+            return dt;
+        }
+
+        public DataTable getAllOrders()
+        {
+            adapter = new SqlDataAdapter("select * from [order]", conns);
+
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
 
             return dt;
+        }
+
+        public bool updateStatusOrderById(int id, int status)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(conns);
+
+                string q = "update [order] set status = @status where id = @id";
+                SqlCommand cmd = new SqlCommand(q, conn);
+
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@status", status);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool deleteOrderById(int id)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(conns);
+                conn.Open();
+
+                string q = "delete from [order] where id = '" + id + "'";
+
+                SqlCommand cmd = new SqlCommand(q, conn);
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return false;
+            }
         }
 
 

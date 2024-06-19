@@ -93,6 +93,16 @@ namespace shoppingApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bill_30px {
+            get {
+                object obj = ResourceManager.GetObject("bill_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chat_30px {
             get {
                 object obj = ResourceManager.GetObject("chat_30px", resourceCulture);
@@ -556,6 +566,16 @@ namespace shoppingApp.Properties {
         internal static System.Drawing.Bitmap star_not_fill_30px {
             get {
                 object obj = ResourceManager.GetObject("star_not_fill_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap statistics_30px {
+            get {
+                object obj = ResourceManager.GetObject("statistics_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

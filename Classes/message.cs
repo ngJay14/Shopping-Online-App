@@ -76,7 +76,6 @@ namespace shoppingApp.Classes
         public string addProdsMess20 = "Select images";
 
 
-
         // Messages in product detail form
         public string prodDetailMess1 = "Product has been added into your cart !";
         public string prodDetailMess2 = "Please choose size !";
@@ -95,6 +94,15 @@ namespace shoppingApp.Classes
 
         // Messages in transaction form
         public string transactionMess1 = "Something wrong. Please try again !";
+        public string transactionMess2 = "Ship address is required !";
+        public string transactionMess3 = "Phone number is required !";
+
+
+        // Message for manage order form
+        public string manaOrderMess1 = "Please choose a status for this order !";
+        public string manaOrderMess2 = "Please choose an order !";
+        public string manaOrderMess3 = "Order has been updated !";
+        public string manaOrderMess4 = "Order has been deleted !";
 
 
         // Message for email sending

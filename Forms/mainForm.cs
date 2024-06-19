@@ -46,6 +46,7 @@ namespace shoppingApp
         profileForm profileFrm;
         dealForm dealFrm;
         chatForm chatFrm;
+        manageOrderForm manageOrderFrm;
 
 
         // Admin, Product and Sidebar timer tick events
@@ -80,7 +81,7 @@ namespace shoppingApp
             {
                 pcChevron2.Image = Resources.chevron_under_30px;
 
-                if (flPnAdmin.Height >= 162)
+                if (flPnAdmin.Height >= 242)
                 {
                     adminTransaction.Stop();
                     adminExpanded = true;
@@ -245,6 +246,7 @@ namespace shoppingApp
             profileFrm = null;
             dealFrm = null;
             chatFrm = null;
+            manageOrderFrm = null;
         }
 
         // Button About us click event
@@ -418,6 +420,30 @@ namespace shoppingApp
             {
                 clearChildForm();
                 btnProfile_Click(sender, e);
+            }
+        }
+
+        // Button Manage orders click event
+        private void btnManageOrders_Click(object sender, EventArgs e)
+        {
+            if (manageOrderFrm == null)
+            {
+                lbFlows.Text = "Manage orders";
+
+                manageOrderFrm = new manageOrderForm();
+                manageOrderFrm.FormClosed += ChildForm_FormClosed;
+                manageOrderFrm.MdiParent = this;
+                manageOrderFrm.Dock = DockStyle.Fill;
+
+                manageOrderFrm.parentForm = this;
+                manageOrderFrm.username = user.Username;
+
+                manageOrderFrm.Show();
+            }
+            else
+            {
+                clearChildForm();
+                btnManageOrders_Click(sender, e);
             }
         }
 

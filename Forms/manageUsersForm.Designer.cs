@@ -456,7 +456,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "manageUsersForm";
             this.Text = "addCatesForm";
-            this.Load += new System.EventHandler(this.manageUsers_Load);
+            this.Load += new System.EventHandler(this.manageUsersForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcAva)).EndInit();

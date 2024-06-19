@@ -20,11 +20,11 @@ namespace shoppingApp.Forms
             InitializeComponent();
         }
 
-        message mess = new message();
-        common comm = new common();
-        sqlAdapter sql = new sqlAdapter();
+        private message mess = new message();
+        private common comm = new common();
+        private sqlAdapter sql = new sqlAdapter();
 
-        string username = null;
+        private string username = null;
 
         // Button Delete click event
         private void btnDelete_Click(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace shoppingApp.Forms
                     if (sql.deleteUserByUsername(username))
                     {
                         MessageBox.Show(mess.manaUsersMess2);
-                        manageUsers_Load(sender, e);
+                        manageUsersForm_Load(sender, e);
                     }
                 }
             }
@@ -74,7 +74,7 @@ namespace shoppingApp.Forms
                 {
                     MessageBox.Show(mess.manaUsersMess1);
 
-                    manageUsers_Load(sender, e);
+                    manageUsersForm_Load(sender, e);
                     this.ParentForm.Activate();
                 }
             }            
@@ -242,7 +242,7 @@ namespace shoppingApp.Forms
         }
 
         // Form load event
-        private void manageUsers_Load(object sender, EventArgs e)
+        private void manageUsersForm_Load(object sender, EventArgs e)
         {
             clearCtrl();
 

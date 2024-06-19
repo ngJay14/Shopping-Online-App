@@ -51,14 +51,18 @@
             this.btnInsertCates = new Guna.UI2.WinForms.Guna2Button();
             this.pnBtnManageUsers = new System.Windows.Forms.Panel();
             this.btnManageUsers = new Guna.UI2.WinForms.Guna2Button();
+            this.pnBtnManageOrders = new System.Windows.Forms.Panel();
+            this.btnManageOrders = new Guna.UI2.WinForms.Guna2Button();
+            this.pnBtnStatistic = new System.Windows.Forms.Panel();
+            this.btnStatistic = new Guna.UI2.WinForms.Guna2Button();
             this.pnBtnProfile = new System.Windows.Forms.Panel();
             this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
-            this.pnBtnOrders = new System.Windows.Forms.Panel();
-            this.btnOrders = new Guna.UI2.WinForms.Guna2Button();
             this.pnBtnChat = new System.Windows.Forms.Panel();
             this.btnChat = new Guna.UI2.WinForms.Guna2Button();
             this.pnBtnAboutUs = new System.Windows.Forms.Panel();
             this.btnAboutUs = new Guna.UI2.WinForms.Guna2Button();
+            this.pnBtnOrders = new System.Windows.Forms.Panel();
+            this.btnOrders = new Guna.UI2.WinForms.Guna2Button();
             this.pnBtnLogout = new System.Windows.Forms.Panel();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.productsTransaction = new System.Windows.Forms.Timer(this.components);
@@ -85,10 +89,12 @@
             this.pnBtnInsertProds.SuspendLayout();
             this.pnBtnInsertCates.SuspendLayout();
             this.pnBtnManageUsers.SuspendLayout();
+            this.pnBtnManageOrders.SuspendLayout();
+            this.pnBtnStatistic.SuspendLayout();
             this.pnBtnProfile.SuspendLayout();
-            this.pnBtnOrders.SuspendLayout();
             this.pnBtnChat.SuspendLayout();
             this.pnBtnAboutUs.SuspendLayout();
+            this.pnBtnOrders.SuspendLayout();
             this.pnBtnLogout.SuspendLayout();
             this.navBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcAva)).BeginInit();
@@ -101,9 +107,9 @@
             this.sideBar.Controls.Add(this.pnBtnHotDeal);
             this.sideBar.Controls.Add(this.flPnAdmin);
             this.sideBar.Controls.Add(this.pnBtnProfile);
-            this.sideBar.Controls.Add(this.pnBtnOrders);
             this.sideBar.Controls.Add(this.pnBtnChat);
             this.sideBar.Controls.Add(this.pnBtnAboutUs);
+            this.sideBar.Controls.Add(this.pnBtnOrders);
             this.sideBar.Controls.Add(this.pnBtnLogout);
             this.sideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sideBar.Location = new System.Drawing.Point(0, 45);
@@ -261,6 +267,8 @@
             this.flPnAdmin.Controls.Add(this.pnBtnInsertProds);
             this.flPnAdmin.Controls.Add(this.pnBtnInsertCates);
             this.flPnAdmin.Controls.Add(this.pnBtnManageUsers);
+            this.flPnAdmin.Controls.Add(this.pnBtnManageOrders);
+            this.flPnAdmin.Controls.Add(this.pnBtnStatistic);
             this.flPnAdmin.Location = new System.Drawing.Point(0, 80);
             this.flPnAdmin.Margin = new System.Windows.Forms.Padding(0);
             this.flPnAdmin.Name = "flPnAdmin";
@@ -398,6 +406,61 @@
             this.btnManageUsers.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnManageUsers.Click += new System.EventHandler(this.btnManageUsers_Click);
             // 
+            // pnBtnManageOrders
+            // 
+            this.pnBtnManageOrders.Controls.Add(this.btnManageOrders);
+            this.pnBtnManageOrders.Location = new System.Drawing.Point(0, 160);
+            this.pnBtnManageOrders.Margin = new System.Windows.Forms.Padding(0);
+            this.pnBtnManageOrders.Name = "pnBtnManageOrders";
+            this.pnBtnManageOrders.Size = new System.Drawing.Size(250, 40);
+            this.pnBtnManageOrders.TabIndex = 12;
+            // 
+            // btnManageOrders
+            // 
+            this.btnManageOrders.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnManageOrders.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnManageOrders.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnManageOrders.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnManageOrders.FillColor = System.Drawing.Color.DimGray;
+            this.btnManageOrders.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnManageOrders.ForeColor = System.Drawing.Color.White;
+            this.btnManageOrders.Image = global::shoppingApp.Properties.Resources.bill_30px;
+            this.btnManageOrders.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnManageOrders.Location = new System.Drawing.Point(0, -16);
+            this.btnManageOrders.Name = "btnManageOrders";
+            this.btnManageOrders.Size = new System.Drawing.Size(250, 72);
+            this.btnManageOrders.TabIndex = 8;
+            this.btnManageOrders.Text = "     Manage Orders";
+            this.btnManageOrders.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnManageOrders.Click += new System.EventHandler(this.btnManageOrders_Click);
+            // 
+            // pnBtnStatistic
+            // 
+            this.pnBtnStatistic.Controls.Add(this.btnStatistic);
+            this.pnBtnStatistic.Location = new System.Drawing.Point(0, 200);
+            this.pnBtnStatistic.Margin = new System.Windows.Forms.Padding(0);
+            this.pnBtnStatistic.Name = "pnBtnStatistic";
+            this.pnBtnStatistic.Size = new System.Drawing.Size(250, 40);
+            this.pnBtnStatistic.TabIndex = 13;
+            // 
+            // btnStatistic
+            // 
+            this.btnStatistic.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnStatistic.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnStatistic.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnStatistic.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnStatistic.FillColor = System.Drawing.Color.DimGray;
+            this.btnStatistic.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnStatistic.ForeColor = System.Drawing.Color.White;
+            this.btnStatistic.Image = global::shoppingApp.Properties.Resources.statistics_30px;
+            this.btnStatistic.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnStatistic.Location = new System.Drawing.Point(0, -16);
+            this.btnStatistic.Name = "btnStatistic";
+            this.btnStatistic.Size = new System.Drawing.Size(250, 72);
+            this.btnStatistic.TabIndex = 8;
+            this.btnStatistic.Text = "     Statistic";
+            this.btnStatistic.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // pnBtnProfile
             // 
             this.pnBtnProfile.Controls.Add(this.btnProfile);
@@ -426,38 +489,10 @@
             this.btnProfile.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
-            // pnBtnOrders
-            // 
-            this.pnBtnOrders.Controls.Add(this.btnOrders);
-            this.pnBtnOrders.Location = new System.Drawing.Point(0, 160);
-            this.pnBtnOrders.Margin = new System.Windows.Forms.Padding(0);
-            this.pnBtnOrders.Name = "pnBtnOrders";
-            this.pnBtnOrders.Size = new System.Drawing.Size(250, 40);
-            this.pnBtnOrders.TabIndex = 13;
-            // 
-            // btnOrders
-            // 
-            this.btnOrders.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnOrders.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnOrders.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnOrders.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnOrders.FillColor = System.Drawing.Color.Black;
-            this.btnOrders.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.btnOrders.ForeColor = System.Drawing.Color.White;
-            this.btnOrders.Image = global::shoppingApp.Properties.Resources.purchase_order_30px;
-            this.btnOrders.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnOrders.Location = new System.Drawing.Point(0, -16);
-            this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Size = new System.Drawing.Size(250, 72);
-            this.btnOrders.TabIndex = 8;
-            this.btnOrders.Text = "     Your oders";
-            this.btnOrders.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
-            // 
             // pnBtnChat
             // 
             this.pnBtnChat.Controls.Add(this.btnChat);
-            this.pnBtnChat.Location = new System.Drawing.Point(0, 200);
+            this.pnBtnChat.Location = new System.Drawing.Point(0, 160);
             this.pnBtnChat.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnChat.Name = "pnBtnChat";
             this.pnBtnChat.Size = new System.Drawing.Size(250, 40);
@@ -485,7 +520,7 @@
             // pnBtnAboutUs
             // 
             this.pnBtnAboutUs.Controls.Add(this.btnAboutUs);
-            this.pnBtnAboutUs.Location = new System.Drawing.Point(0, 240);
+            this.pnBtnAboutUs.Location = new System.Drawing.Point(0, 200);
             this.pnBtnAboutUs.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnAboutUs.Name = "pnBtnAboutUs";
             this.pnBtnAboutUs.Size = new System.Drawing.Size(250, 40);
@@ -509,6 +544,34 @@
             this.btnAboutUs.Text = "     About us";
             this.btnAboutUs.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAboutUs.Click += new System.EventHandler(this.btnAboutUs_Click);
+            // 
+            // pnBtnOrders
+            // 
+            this.pnBtnOrders.Controls.Add(this.btnOrders);
+            this.pnBtnOrders.Location = new System.Drawing.Point(0, 240);
+            this.pnBtnOrders.Margin = new System.Windows.Forms.Padding(0);
+            this.pnBtnOrders.Name = "pnBtnOrders";
+            this.pnBtnOrders.Size = new System.Drawing.Size(250, 40);
+            this.pnBtnOrders.TabIndex = 13;
+            // 
+            // btnOrders
+            // 
+            this.btnOrders.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnOrders.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnOrders.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnOrders.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnOrders.FillColor = System.Drawing.Color.Black;
+            this.btnOrders.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.btnOrders.ForeColor = System.Drawing.Color.White;
+            this.btnOrders.Image = global::shoppingApp.Properties.Resources.purchase_order_30px;
+            this.btnOrders.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnOrders.Location = new System.Drawing.Point(0, -16);
+            this.btnOrders.Name = "btnOrders";
+            this.btnOrders.Size = new System.Drawing.Size(250, 72);
+            this.btnOrders.TabIndex = 8;
+            this.btnOrders.Text = "     Your oders";
+            this.btnOrders.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // pnBtnLogout
             // 
@@ -693,10 +756,12 @@
             this.pnBtnInsertProds.ResumeLayout(false);
             this.pnBtnInsertCates.ResumeLayout(false);
             this.pnBtnManageUsers.ResumeLayout(false);
+            this.pnBtnManageOrders.ResumeLayout(false);
+            this.pnBtnStatistic.ResumeLayout(false);
             this.pnBtnProfile.ResumeLayout(false);
-            this.pnBtnOrders.ResumeLayout(false);
             this.pnBtnChat.ResumeLayout(false);
             this.pnBtnAboutUs.ResumeLayout(false);
+            this.pnBtnOrders.ResumeLayout(false);
             this.pnBtnLogout.ResumeLayout(false);
             this.navBar.ResumeLayout(false);
             this.navBar.PerformLayout();
@@ -748,6 +813,10 @@
         private System.Windows.Forms.Panel navBar;
         private System.Windows.Forms.Panel pnBtnProfile;
         private Guna.UI2.WinForms.Guna2Button btnProfile;
+        private System.Windows.Forms.Panel pnBtnManageOrders;
+        private Guna.UI2.WinForms.Guna2Button btnManageOrders;
+        private System.Windows.Forms.Panel pnBtnStatistic;
+        private Guna.UI2.WinForms.Guna2Button btnStatistic;
     }
 }
 
