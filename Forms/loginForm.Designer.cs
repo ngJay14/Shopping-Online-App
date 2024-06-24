@@ -31,18 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnForgetPass = new System.Windows.Forms.Panel();
             this.pcReturn = new System.Windows.Forms.PictureBox();
             this.lbDesForPass = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbForPass = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnSend = new Guna.UI2.WinForms.Guna2Button();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.txtPass = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnLogin = new System.Windows.Forms.Panel();
+            this.btnShowPass = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lbSignup = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lnkLbForgetPass = new System.Windows.Forms.LinkLabel();
             this.lnkLbLogup = new System.Windows.Forms.LinkLabel();
@@ -50,9 +51,9 @@
             this.btnExit = new Guna.UI2.WinForms.Guna2ImageButton();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnForgetPass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcReturn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +68,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 471);
             this.panel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(62, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(282, 47);
+            this.label1.TabIndex = 100;
+            this.label1.Text = "WELCOME BACK";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::shoppingApp.Properties.Resources.logo_name_slogan;
+            this.pictureBox1.Location = new System.Drawing.Point(70, 120);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(252, 256);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // pnForgetPass
             // 
@@ -159,27 +181,6 @@
             this.txtEmail.Size = new System.Drawing.Size(272, 41);
             this.txtEmail.TabIndex = 24;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Sans Serif Collection", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(62, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 47);
-            this.label1.TabIndex = 100;
-            this.label1.Text = "WELCOME BACK";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::shoppingApp.Properties.Resources.logo_name_slogan;
-            this.pictureBox1.Location = new System.Drawing.Point(70, 120);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(252, 256);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // txtUsername
             // 
             this.txtUsername.BorderRadius = 8;
@@ -198,7 +199,7 @@
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderText = "Username";
             this.txtUsername.SelectedText = "";
-            this.txtUsername.Size = new System.Drawing.Size(329, 36);
+            this.txtUsername.Size = new System.Drawing.Size(317, 36);
             this.txtUsername.TabIndex = 0;
             // 
             // btnLogin
@@ -236,12 +237,13 @@
             this.txtPass.PasswordChar = '●';
             this.txtPass.PlaceholderText = "Password";
             this.txtPass.SelectedText = "";
-            this.txtPass.Size = new System.Drawing.Size(329, 36);
+            this.txtPass.Size = new System.Drawing.Size(317, 36);
             this.txtPass.TabIndex = 1;
             this.txtPass.UseSystemPasswordChar = true;
             // 
             // pnLogin
             // 
+            this.pnLogin.Controls.Add(this.btnShowPass);
             this.pnLogin.Controls.Add(this.lbSignup);
             this.pnLogin.Controls.Add(this.lnkLbForgetPass);
             this.pnLogin.Controls.Add(this.lnkLbLogup);
@@ -249,10 +251,26 @@
             this.pnLogin.Controls.Add(this.txtUsername);
             this.pnLogin.Controls.Add(this.txtPass);
             this.pnLogin.Controls.Add(this.btnLogin);
-            this.pnLogin.Location = new System.Drawing.Point(416, 83);
+            this.pnLogin.Location = new System.Drawing.Point(412, 83);
             this.pnLogin.Name = "pnLogin";
             this.pnLogin.Size = new System.Drawing.Size(384, 288);
             this.pnLogin.TabIndex = 8;
+            // 
+            // btnShowPass
+            // 
+            this.btnShowPass.BackColor = System.Drawing.Color.White;
+            this.btnShowPass.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnShowPass.HoverState.ImageSize = new System.Drawing.Size(28, 28);
+            this.btnShowPass.Image = global::shoppingApp.Properties.Resources.invisible_30px;
+            this.btnShowPass.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnShowPass.ImageRotate = 0F;
+            this.btnShowPass.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnShowPass.Location = new System.Drawing.Point(305, 111);
+            this.btnShowPass.Name = "btnShowPass";
+            this.btnShowPass.PressedState.ImageSize = new System.Drawing.Size(28, 28);
+            this.btnShowPass.Size = new System.Drawing.Size(30, 30);
+            this.btnShowPass.TabIndex = 71;
+            this.btnShowPass.Click += new System.EventHandler(this.btnShowPass_Click);
             // 
             // lbSignup
             // 
@@ -326,10 +344,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 471);
-            this.Controls.Add(this.pnForgetPass);
             this.Controls.Add(this.pnLogin);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.pnForgetPass);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "loginForm";
@@ -338,10 +356,10 @@
             this.Load += new System.EventHandler(this.loginForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnForgetPass.ResumeLayout(false);
             this.pnForgetPass.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcReturn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnLogin.ResumeLayout(false);
             this.pnLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
@@ -369,5 +387,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSend;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
         private System.Windows.Forms.ErrorProvider error;
+        private Guna.UI2.WinForms.Guna2ImageButton btnShowPass;
     }
 }

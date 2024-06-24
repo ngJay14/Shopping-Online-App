@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(profileForm));
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPhoneNum = new Guna.UI2.WinForms.Guna2TextBox();
@@ -40,13 +42,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnShowPass = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pcAva = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ofd = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pcAva)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // label10
@@ -68,7 +73,6 @@
             this.label8.Size = new System.Drawing.Size(68, 20);
             this.label8.TabIndex = 64;
             this.label8.Text = "Address";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txtPhoneNum
             // 
@@ -86,13 +90,13 @@
             this.txtPhoneNum.ForeColor = System.Drawing.Color.Black;
             this.txtPhoneNum.HoverState.BorderColor = System.Drawing.Color.Black;
             this.txtPhoneNum.Location = new System.Drawing.Point(448, 281);
+            this.txtPhoneNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPhoneNum.Name = "txtPhoneNum";
             this.txtPhoneNum.PasswordChar = '\0';
             this.txtPhoneNum.PlaceholderText = "Phone number";
             this.txtPhoneNum.SelectedText = "";
             this.txtPhoneNum.Size = new System.Drawing.Size(340, 36);
             this.txtPhoneNum.TabIndex = 5;
-            this.txtPhoneNum.TextChanged += new System.EventHandler(this.txtPhoneNum_TextChanged);
             // 
             // label7
             // 
@@ -104,7 +108,6 @@
             this.label7.Size = new System.Drawing.Size(113, 20);
             this.label7.TabIndex = 63;
             this.label7.Text = "Phone number";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // txtEmail
             // 
@@ -121,13 +124,13 @@
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(14, 281);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderText = "Email";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(340, 36);
             this.txtEmail.TabIndex = 4;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // label6
             // 
@@ -138,7 +141,6 @@
             this.label6.Size = new System.Drawing.Size(48, 20);
             this.label6.TabIndex = 61;
             this.label6.Text = "Email";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtLastname
             // 
@@ -156,13 +158,13 @@
             this.txtLastname.ForeColor = System.Drawing.Color.Black;
             this.txtLastname.HoverState.BorderColor = System.Drawing.Color.Black;
             this.txtLastname.Location = new System.Drawing.Point(448, 210);
+            this.txtLastname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.PasswordChar = '\0';
             this.txtLastname.PlaceholderText = "Lastname";
             this.txtLastname.SelectedText = "";
             this.txtLastname.Size = new System.Drawing.Size(340, 36);
             this.txtLastname.TabIndex = 3;
-            this.txtLastname.TextChanged += new System.EventHandler(this.txtLastname_TextChanged);
             // 
             // label5
             // 
@@ -174,7 +176,6 @@
             this.label5.Size = new System.Drawing.Size(80, 20);
             this.label5.TabIndex = 59;
             this.label5.Text = "Lastname";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtFirstname
             // 
@@ -192,13 +193,13 @@
             this.txtFirstname.ForeColor = System.Drawing.Color.Black;
             this.txtFirstname.HoverState.BorderColor = System.Drawing.Color.Black;
             this.txtFirstname.Location = new System.Drawing.Point(448, 140);
+            this.txtFirstname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.PasswordChar = '\0';
             this.txtFirstname.PlaceholderText = "Firstname";
             this.txtFirstname.SelectedText = "";
             this.txtFirstname.Size = new System.Drawing.Size(340, 36);
             this.txtFirstname.TabIndex = 1;
-            this.txtFirstname.TextChanged += new System.EventHandler(this.txtFirstname_TextChanged);
             // 
             // label4
             // 
@@ -210,7 +211,6 @@
             this.label4.Size = new System.Drawing.Size(80, 20);
             this.label4.TabIndex = 57;
             this.label4.Text = "Firstname";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtPassword
             // 
@@ -227,13 +227,13 @@
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.Black;
             this.txtPassword.Location = new System.Drawing.Point(14, 210);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
             this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.SelectedText = "";
-            this.txtPassword.Size = new System.Drawing.Size(304, 36);
+            this.txtPassword.Size = new System.Drawing.Size(340, 36);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // label3
             // 
@@ -244,25 +244,24 @@
             this.label3.Size = new System.Drawing.Size(78, 20);
             this.label3.TabIndex = 55;
             this.label3.Text = "Password";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // btnUpdate
+            // btnSave
             // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.BorderRadius = 5;
-            this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdate.FillColor = System.Drawing.Color.Black;
-            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(448, 361);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(134, 36);
-            this.btnUpdate.TabIndex = 7;
-            this.btnUpdate.Text = "Save";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BorderRadius = 5;
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.FillColor = System.Drawing.Color.Black;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(448, 361);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(134, 36);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtUsername
             // 
@@ -279,6 +278,7 @@
             this.txtUsername.ForeColor = System.Drawing.Color.Black;
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.Black;
             this.txtUsername.Location = new System.Drawing.Point(14, 140);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderText = "Username";
@@ -286,7 +286,6 @@
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(340, 36);
             this.txtUsername.TabIndex = 0;
-            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // label1
             // 
@@ -297,7 +296,6 @@
             this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 52;
             this.label1.Text = "Username";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtAddress
             // 
@@ -314,13 +312,13 @@
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
             this.txtAddress.HoverState.BorderColor = System.Drawing.Color.Black;
             this.txtAddress.Location = new System.Drawing.Point(14, 361);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.PlaceholderText = "Address";
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(340, 36);
             this.txtAddress.TabIndex = 6;
-            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // btnShowPass
             // 
@@ -330,7 +328,7 @@
             this.btnShowPass.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnShowPass.ImageRotate = 0F;
             this.btnShowPass.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnShowPass.Location = new System.Drawing.Point(324, 214);
+            this.btnShowPass.Location = new System.Drawing.Point(321, 213);
             this.btnShowPass.Name = "btnShowPass";
             this.btnShowPass.PressedState.ImageSize = new System.Drawing.Size(28, 28);
             this.btnShowPass.Size = new System.Drawing.Size(30, 30);
@@ -349,6 +347,16 @@
             this.pcAva.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcAva.TabIndex = 68;
             this.pcAva.TabStop = false;
+            this.pcAva.Click += new System.EventHandler(this.pcAva_Click);
+            // 
+            // error
+            // 
+            this.error.ContainerControl = this;
+            this.error.Icon = ((System.Drawing.Icon)(resources.GetObject("error.Icon")));
+            // 
+            // ofd
+            // 
+            this.ofd.FileName = "openFileDialog1";
             // 
             // profileForm
             // 
@@ -371,7 +379,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -379,6 +387,7 @@
             this.Text = "profileForm";
             this.Load += new System.EventHandler(this.profileForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcAva)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,11 +406,13 @@
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2Button btnUpdate;
+        private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2TextBox txtUsername;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox pcAva;
         private Guna.UI2.WinForms.Guna2TextBox txtAddress;
         private Guna.UI2.WinForms.Guna2ImageButton btnShowPass;
+        private System.Windows.Forms.ErrorProvider error;
+        private System.Windows.Forms.OpenFileDialog ofd;
     }
 }

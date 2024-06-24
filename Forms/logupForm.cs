@@ -1,4 +1,5 @@
-﻿using shoppingApp.Classes;
+﻿using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using shoppingApp.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,13 +23,35 @@ namespace shoppingApp.Forms
             InitializeComponent();
         }
 
-        common com = new common();
-        message mess = new message();
-        sqlAdapter sql = new sqlAdapter();
+        private common com = new common();
+        private message mess = new message();
+        private sqlAdapter sql = new sqlAdapter();
 
+        private bool passVisible = false;
+
+        // Exit button click event
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        // Show password button click event
+        private void btnShowPass_Click(object sender, EventArgs e)
+        {
+            if (!passVisible)
+            {
+                passVisible = true;
+                txtPass.PasswordChar = '\0';
+                txtPass.UseSystemPasswordChar = false;
+                btnShowPass.Image = Properties.Resources.invisible_30px;
+            }
+            else
+            {
+                passVisible = false;
+                txtPass.PasswordChar = '*';
+                txtPass.UseSystemPasswordChar = true;
+                btnShowPass.Image = Properties.Resources.eye_30px;
+            }
         }
 
         // Link button log in click event
@@ -155,7 +178,11 @@ namespace shoppingApp.Forms
                 txtPhoneNum.Text.Trim(), txtEmail.Text.Trim(), txtPass.Text.Trim(), imageDir, "user"))
             {
                 File.Copy(ofd.FileName, imageDir);
-                MessageBox.Show("insert ok");
+
+                this.Hide();
+
+                loginForm login = new loginForm();
+                login.ShowDialog();
             }
             else
                 MessageBox.Show(mess.logupMess5);

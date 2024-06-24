@@ -26,8 +26,9 @@ namespace shoppingApp.Forms
         message mess = new message();
         common comm = new common();
 
-        int prod_id = -1;
-        bool status = false, sex = false;
+        private int prod_id = -1;
+        private bool status = false, sex = false;
+        private DateTime end_day = DateTime.MinValue;
 
         private void addProdsForm_Load(object sender, EventArgs e)
         {
@@ -57,11 +58,13 @@ namespace shoppingApp.Forms
             radBtnSex2.Checked = false;
             rchTxtProdDes.Clear();
             flPnImages.Controls.Clear();
+            end_day = DateTime.MinValue;
+            dateTimePicker1.Value = DateTime.Now;
 
             prod_id = -1;
         }
 
-        // Check validated informations
+        // Check valid data
         private bool checkValInfo()
         {
             // Check empty value of product name textbox
@@ -174,6 +177,15 @@ namespace shoppingApp.Forms
                 error.SetError(rchTxtProdDes, string.Empty);
 
 
+            // Check empty datetime picker value
+            if (int.Parse(txtDiscount.Text) != 0 && end_day == DateTime.MinValue)
+            {
+                error.SetError(dateTimePicker1, mess.addProdsMess21);
+                return false;
+            }
+            else
+                error.SetError(dateTimePicker1, string.Empty);
+
             return true;
         }
 
@@ -258,13 +270,13 @@ namespace shoppingApp.Forms
                 // Create image folder and copy images of product
 
                 Product prod = sql.getProdOrderByDesc();
-                string foldPath = $"prod_images//prod_{prod.Id}";
+                string foldPath = $"prod_images//prod_{prod.Id + 1}";
                 Directory.CreateDirectory(foldPath);
                 int i = 0;
 
                 foreach (var f in files)
                 {
-                    string imaPath = getProdImageUrl(foldPath, prod.Id, i);
+                    string imaPath = getProdImageUrl(foldPath, prod.Id + 1, i);
                     listImages.Add(imaPath);
                     File.Copy(f, imaPath);
                     i++;
@@ -370,6 +382,13 @@ namespace shoppingApp.Forms
             return imageDirRel;
         }
 
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            if (dateTimePicker1.Value == DateTime.Now)
+                return;
+            end_day = dateTimePicker1.Value;
+        }
+
         // Row header of datagridview click event
         private void grViewProducts_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -397,7 +416,10 @@ namespace shoppingApp.Forms
                 radBtnSex2.Checked = true;
 
             if (grViewProducts.CurrentRow.Cells[12].Value != DBNull.Value)
+            {
                 dateTimePicker1.Value = (DateTime)grViewProducts.CurrentRow.Cells[12].Value;
+                end_day = (DateTime)grViewProducts.CurrentRow.Cells[12].Value;
+            }
 
             List<string> list = grViewProducts.CurrentRow.Cells[8].Value.ToString().Replace(" ", "").Split(',').ToList();
 

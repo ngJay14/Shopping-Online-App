@@ -47,6 +47,7 @@
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
+            this.btnShowPass = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcAva)).BeginInit();
@@ -298,11 +299,28 @@
             // 
             this.ofd.FileName = "openFileDialog1";
             // 
+            // btnShowPass
+            // 
+            this.btnShowPass.BackColor = System.Drawing.Color.White;
+            this.btnShowPass.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnShowPass.HoverState.ImageSize = new System.Drawing.Size(28, 28);
+            this.btnShowPass.Image = global::shoppingApp.Properties.Resources.invisible_30px;
+            this.btnShowPass.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnShowPass.ImageRotate = 0F;
+            this.btnShowPass.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnShowPass.Location = new System.Drawing.Point(735, 359);
+            this.btnShowPass.Name = "btnShowPass";
+            this.btnShowPass.PressedState.ImageSize = new System.Drawing.Size(28, 28);
+            this.btnShowPass.Size = new System.Drawing.Size(30, 30);
+            this.btnShowPass.TabIndex = 101;
+            this.btnShowPass.Click += new System.EventHandler(this.btnShowPass_Click);
+            // 
             // logupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 495);
+            this.Controls.Add(this.btnShowPass);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lnkLbLogin);
             this.Controls.Add(this.lbQues);
@@ -350,5 +368,6 @@
         private System.Windows.Forms.ErrorProvider error;
         private Guna.UI2.WinForms.Guna2TextBox txtUsername;
         private System.Windows.Forms.OpenFileDialog ofd;
+        private Guna.UI2.WinForms.Guna2ImageButton btnShowPass;
     }
 }

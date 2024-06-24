@@ -64,6 +64,7 @@ namespace shoppingApp.Forms
                 // Fill address of user
                 User user = sql.getUserByUsername(username);
                 txtAddress.Text = user.Address;
+                txtPhoneNum.Text = user.PhoneNum;
             }
             else if (!transacting && cartItem != null)
             {
@@ -74,6 +75,7 @@ namespace shoppingApp.Forms
                 // Fill address of user
                 User user = sql.getUserByUsername(username);
                 txtAddress.Text = user.Address;
+                txtPhoneNum.Text = user.PhoneNum;
 
             }
             else
@@ -101,7 +103,9 @@ namespace shoppingApp.Forms
                 txtAddress.Text = dt.Rows[0]["ship_address"].ToString();
                 txtAddress.ReadOnly = true;
 
-                txtPhoneNum.Text = dt.Rows[0]["phone"].ToString();
+                // Fill address of user
+                User user = sql.getUserByUsername(username);
+                txtPhoneNum.Text = user.PhoneNum;
                 txtPhoneNum.ReadOnly = true;
 
                 rchTxtNote.Text = dt.Rows[0]["note"].ToString();
@@ -170,11 +174,20 @@ namespace shoppingApp.Forms
                 {
                     foreach (ucCartItem item in flPnItems.Controls)
                     {
+                        // Insert order item into order_items table
                         if (!sql.insertOrderItem(sql.getOrderIdOrderByDesc(), item.ProdId, item.Quantity, item.ImageUrl, item.ProdSize))
                         {
                             MessageBox.Show(mess.transactionMess1);
                             return;
                         }
+
+                        // Minus quantity of product after transaction
+                        if (!sql.minusQuantityAfterTransactionById(item.ProdId, item.Quantity))
+                        {
+                            MessageBox.Show(mess.transactionMess1);
+                            return;
+                        }
+                            
                     }
 
                     sql.deleteAllCartItemsById(username);

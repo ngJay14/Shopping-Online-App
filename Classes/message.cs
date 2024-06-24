@@ -22,6 +22,7 @@ namespace shoppingApp.Classes
         public string logupMess10 = "Password is required !";
         public string logupMess11 = "Sign up successfully !";
         public string logupMess12 = "Email has existed !";
+        public string logupMess13 = "Address is required !";
 
 
         // Messages in login form
@@ -70,6 +71,7 @@ namespace shoppingApp.Classes
         public string addProdsMess14 = "Product has been updated !";
         public string addProdsMess15 = "Please choose a product !";
         public string addProdsMess16 = "Product has been deleted !";
+        public string addProdsMess21 = "Please pick end time for discount !";
 
         public string addProdsMess17 = "You can insert or delete any image file in this folder. Syntax of filename must be 'prod_[product_id]_[sequence_of_image].'";
         public string addProdsMess18 = "Edit image files of product";

@@ -21,9 +21,11 @@ namespace shoppingApp.Forms
             InitializeComponent();
         }
 
-        common com = new common();
-        message mess = new message();
-        sqlAdapter sql = new sqlAdapter();
+        private common com = new common();
+        private message mess = new message();
+        private sqlAdapter sql = new sqlAdapter();
+
+        private bool passVisible = false;
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -135,7 +137,7 @@ namespace shoppingApp.Forms
             }
             else
             {
-                if(sql.checkExistEmail(txtEmail.Text.Trim()))
+                if (sql.checkExistEmail(txtEmail.Text.Trim()))
                 {
                     string pass = sql.getPasswordByEmail(txtEmail.Text.Trim());
                     com.sendEmail(txtEmail.Text.Trim(), mess.loginMess5, mess.loginMess4 + pass, null);
@@ -151,7 +153,7 @@ namespace shoppingApp.Forms
             }
 
             // Send password to email
-            
+
         }
 
         // Form load event
@@ -176,6 +178,25 @@ namespace shoppingApp.Forms
             txtPass.Clear();
             txtUsername.Clear();
             error.Clear();
+        }
+
+        // Show password button click event
+        private void btnShowPass_Click(object sender, EventArgs e)
+        {
+            if (!passVisible)
+            {
+                passVisible = true;
+                txtPass.PasswordChar = '\0';
+                txtPass.UseSystemPasswordChar = false;
+                btnShowPass.Image = Properties.Resources.invisible_30px;
+            }
+            else
+            {
+                passVisible = false;
+                txtPass.PasswordChar = '*';
+                txtPass.UseSystemPasswordChar = true;
+                btnShowPass.Image = Properties.Resources.eye_30px;
+            }
         }
     }
 }

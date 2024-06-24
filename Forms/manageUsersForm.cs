@@ -70,7 +70,7 @@ namespace shoppingApp.Forms
                 }
 
                 if (sql.updateUserByUsername(txtUsername.Text, txtFirstname.Text, txtLastname.Text, txtPhoneNum.Text,
-                   txtEmail.Text, txtPassword.Text, cmBxRole.SelectedItem.ToString(), newImage))
+                   txtEmail.Text, txtPassword.Text, cmBxRole.SelectedItem.ToString(), newImage, txtAddress.Text))
                 {
                     MessageBox.Show(mess.manaUsersMess1);
 
@@ -97,6 +97,7 @@ namespace shoppingApp.Forms
             txtPhoneNum.Clear();
             cmBxRole.SelectedIndex = -1;
             pcAva.Image = null;
+            ofd.FileName = string.Empty;
 
             username = null;
         }
@@ -112,6 +113,8 @@ namespace shoppingApp.Forms
             txtEmail.Text = usersView.CurrentRow.Cells[3].Value.ToString();
             txtPhoneNum.Text = usersView.CurrentRow.Cells[4].Value.ToString();
             txtPassword.Text = usersView.CurrentRow.Cells[6].Value.ToString();
+            if (usersView.CurrentRow.Cells[8].Value != DBNull.Value)
+                txtAddress.Text = usersView.CurrentRow.Cells[6].Value.ToString();
 
             if (string.Equals(usersView.CurrentRow.Cells[7].Value.ToString(), "admin"))
                 cmBxRole.SelectedIndex = 1;
@@ -250,7 +253,5 @@ namespace shoppingApp.Forms
 
             usersView.DataSource = dt;
         }
-
-
     }
 }

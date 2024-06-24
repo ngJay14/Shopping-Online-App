@@ -47,6 +47,7 @@ namespace shoppingApp
         dealForm dealFrm;
         chatForm chatFrm;
         manageOrderForm manageOrderFrm;
+        statisticForm statisticFrm;
 
 
         // Admin, Product and Sidebar timer tick events
@@ -247,6 +248,7 @@ namespace shoppingApp
             dealFrm = null;
             chatFrm = null;
             manageOrderFrm = null;
+            statisticFrm = null;
         }
 
         // Button About us click event
@@ -447,6 +449,28 @@ namespace shoppingApp
             }
         }
 
+        // Button Statistic click event
+        private void btnStatistic_Click(object sender, EventArgs e)
+        {
+            if (statisticFrm == null)
+            {
+                lbFlows.Text = "Statistic";
+
+                statisticFrm = new statisticForm();
+                statisticFrm.FormClosed += ChildForm_FormClosed;
+                statisticFrm.MdiParent = this;
+                statisticFrm.Dock = DockStyle.Fill;
+
+                statisticFrm.Show();
+            }
+            else
+            {
+                clearChildForm();
+                btnStatistic_Click(sender, e);
+            }
+        }
+
+        // Button Chat click event
         private void btnChat_Click(object sender, EventArgs e)
         {
             if (chatFrm == null)
@@ -505,6 +529,9 @@ namespace shoppingApp
         // Form loadS event
         private void mainForm_Load(object sender, EventArgs e)
         {
+            // Update discount of products
+            sql.updateDiscountOfAllProducts();
+
             // Set interval time for timers
             sidebarTransaction.Interval = 10;
             productsTransaction.Interval = 10;
@@ -538,5 +565,6 @@ namespace shoppingApp
                 this.SetDesktopLocation(MousePosition.X - mValx, MousePosition.Y - mValy);
             }
         }
+
     }
 }

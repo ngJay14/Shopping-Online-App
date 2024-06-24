@@ -40,7 +40,7 @@ namespace shoppingApp.UserControls
         public string ProdName
         {
             get { return prodName; }
-            set { prodName = value; lbProdName.Text = prodName; }
+            set { prodName = value; lbProdName.Text = setText(prodName); }
         }
         public int Discount
         {
@@ -58,6 +58,7 @@ namespace shoppingApp.UserControls
             set { sex = value; }
         }
 
+        // Caculate price with discount
         private int setPrice()
         {
             int priceWithDis;
@@ -77,6 +78,7 @@ namespace shoppingApp.UserControls
             return priceWithDis;
         }
 
+        // Caculate deal
         private void setDeal()
         {
             if (discount != 0)
@@ -87,6 +89,18 @@ namespace shoppingApp.UserControls
             else
                 lbDeal.Visible = false;
 
+        }
+
+        // Set text size if too long
+        private string setText(string txt)
+        {
+            int max_lenght = 25;
+            if (txt.Length > max_lenght)
+            {
+                txt = string.Concat(txt.Substring(0, max_lenght), "...");
+            }
+
+            return txt;
         }
     }
 }

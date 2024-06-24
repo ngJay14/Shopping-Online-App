@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Collections.Generic;
 
 namespace shoppingApp.Classes
 {
@@ -95,18 +96,18 @@ namespace shoppingApp.Classes
 
         }
 
-        public bool updateUserByUsername(string username, string firstname, string lastname, string phone, string email, string password, string role, string ava)
+        public bool updateUserByUsername(string username, string firstname, string lastname, string phone, string email, string password, string role, string ava, string address)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(conns);
 
-                string q = "update [order] set first_name = @firstname, last_name = @lastname," +
-                    "phone = @phone, email = @email, password = @password, role = @role where username = @username";
+                string q = "update [user] set first_name = @firstname, last_name = @lastname," +
+                    "phone = @phone, email = @email, password = @password, role = @role, address = @address where username = @username";
 
                 if (ava != string.Empty)
                 {
-                    q = "update [order] set first_name = @firstname, last_name = @lastname," +
+                    q = "update [user] set first_name = @firstname, last_name = @lastname," +
                     "phone = @phone, email = @email, password = @password, role = @role, ava = @ava where username = @username";
                 }
 
@@ -120,6 +121,7 @@ namespace shoppingApp.Classes
                 cmd.Parameters.AddWithValue("@password", password);
                 cmd.Parameters.AddWithValue("@role", role);
                 cmd.Parameters.AddWithValue("@ava", ava);
+                cmd.Parameters.AddWithValue("@address", address);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -211,6 +213,7 @@ namespace shoppingApp.Classes
 
             return pass;
         }
+
 
 
         // Queries of category table
@@ -577,6 +580,75 @@ namespace shoppingApp.Classes
 
         }
 
+        public bool minusQuantityAfterTransactionById(int id, int quantity)
+        {
+            Product product = getProductById(id);
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(conns);
+
+                string q = "update [product] set quantity = @quantity where id = @id";
+                SqlCommand cmd = new SqlCommand(q, conn);
+
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@quantity", product.Quantity - quantity);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool updateDiscountAndEnddayById(int id)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(conns);
+
+                string q = "update [product] set discount = '0', end_day = '" + DBNull.Value + "' where id = @id";
+                SqlCommand cmd = new SqlCommand(q, conn);
+
+                cmd.Parameters.AddWithValue("@id", id);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return false;
+            }
+
+            return true;
+        }
+
+        public void updateDiscountOfAllProducts()
+        {
+            DateTime currTime = DateTime.Now;
+            DataTable dt = getAllProducts();
+
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    if (dr["end_day"] != DBNull.Value)
+                        if ((DateTime)dr["end_day"] < currTime)
+                        {
+                            updateDiscountAndEnddayById((int)dr["id"]);
+                        }
+                }
+            }
+        }
+
         // Queries of cart table
         public DataTable getCartItemByUsername(string username)
         {
@@ -913,6 +985,48 @@ namespace shoppingApp.Classes
                 MessageBox.Show(e.Message);
                 return false;
             }
+        }
+
+        public int getTotalOfAllOrdersByMonthAndYear(int month, int year)
+        {
+            int toltal = 0;
+
+            string q = "select * from [order] where month(date) = '" + month + "' and year(date) = '" + year + "'";
+
+            adapter = new SqlDataAdapter(q, conns);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    toltal += (int)dr["total"];
+                }
+            }
+
+            return toltal;
+        }
+
+        public int getNumOfProductByMonthAndYear(int month, int year)
+        {
+            int numProd = 0;
+
+            string q = "select * from [OderItemsView] where month(date) = '" + month + "' and year(date) = '" + year + "'";
+
+            adapter = new SqlDataAdapter(q, conns);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    numProd += (int)dr["quantity"];
+                }
+            }
+
+            return numProd;
         }
 
 

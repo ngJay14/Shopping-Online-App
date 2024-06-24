@@ -112,10 +112,9 @@
             this.sideBar.Controls.Add(this.pnBtnOrders);
             this.sideBar.Controls.Add(this.pnBtnLogout);
             this.sideBar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sideBar.Location = new System.Drawing.Point(0, 55);
-            this.sideBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sideBar.Location = new System.Drawing.Point(0, 45);
             this.sideBar.Name = "sideBar";
-            this.sideBar.Size = new System.Drawing.Size(333, 757);
+            this.sideBar.Size = new System.Drawing.Size(250, 615);
             this.sideBar.TabIndex = 4;
             // 
             // flPnProducts
@@ -127,7 +126,7 @@
             this.flPnProducts.Location = new System.Drawing.Point(0, 0);
             this.flPnProducts.Margin = new System.Windows.Forms.Padding(0);
             this.flPnProducts.Name = "flPnProducts";
-            this.flPnProducts.Size = new System.Drawing.Size(333, 49);
+            this.flPnProducts.Size = new System.Drawing.Size(250, 40);
             this.flPnProducts.TabIndex = 9;
             // 
             // pnBtnProducts
@@ -137,8 +136,8 @@
             this.pnBtnProducts.Location = new System.Drawing.Point(0, 0);
             this.pnBtnProducts.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnProducts.Name = "pnBtnProducts";
-            this.pnBtnProducts.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
-            this.pnBtnProducts.Size = new System.Drawing.Size(333, 49);
+            this.pnBtnProducts.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.pnBtnProducts.Size = new System.Drawing.Size(250, 40);
             this.pnBtnProducts.TabIndex = 9;
             // 
             // pcChevron1
@@ -146,10 +145,9 @@
             this.pcChevron1.FillColor = System.Drawing.Color.Transparent;
             this.pcChevron1.Image = ((System.Drawing.Image)(resources.GetObject("pcChevron1.Image")));
             this.pcChevron1.ImageRotate = 0F;
-            this.pcChevron1.Location = new System.Drawing.Point(264, 9);
-            this.pcChevron1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcChevron1.Location = new System.Drawing.Point(198, 7);
             this.pcChevron1.Name = "pcChevron1";
-            this.pcChevron1.Size = new System.Drawing.Size(40, 37);
+            this.pcChevron1.Size = new System.Drawing.Size(30, 30);
             this.pcChevron1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcChevron1.TabIndex = 6;
             this.pcChevron1.TabStop = false;
@@ -167,10 +165,9 @@
             this.btnProducts.Image = global::shoppingApp.Properties.Resources.cloakroom_30px;
             this.btnProducts.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnProducts.IndicateFocus = true;
-            this.btnProducts.Location = new System.Drawing.Point(0, -20);
-            this.btnProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProducts.Location = new System.Drawing.Point(0, -16);
             this.btnProducts.Name = "btnProducts";
-            this.btnProducts.Size = new System.Drawing.Size(333, 89);
+            this.btnProducts.Size = new System.Drawing.Size(250, 72);
             this.btnProducts.TabIndex = 8;
             this.btnProducts.Text = "     Products";
             this.btnProducts.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -181,10 +178,10 @@
             // pnBtnForHim
             // 
             this.pnBtnForHim.Controls.Add(this.btnForHim);
-            this.pnBtnForHim.Location = new System.Drawing.Point(0, 49);
+            this.pnBtnForHim.Location = new System.Drawing.Point(0, 40);
             this.pnBtnForHim.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnForHim.Name = "pnBtnForHim";
-            this.pnBtnForHim.Size = new System.Drawing.Size(333, 49);
+            this.pnBtnForHim.Size = new System.Drawing.Size(250, 40);
             this.pnBtnForHim.TabIndex = 9;
             // 
             // btnForHim
@@ -198,10 +195,9 @@
             this.btnForHim.ForeColor = System.Drawing.Color.White;
             this.btnForHim.Image = global::shoppingApp.Properties.Resources.man_30px;
             this.btnForHim.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnForHim.Location = new System.Drawing.Point(0, -20);
-            this.btnForHim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnForHim.Location = new System.Drawing.Point(0, -16);
             this.btnForHim.Name = "btnForHim";
-            this.btnForHim.Size = new System.Drawing.Size(333, 89);
+            this.btnForHim.Size = new System.Drawing.Size(250, 72);
             this.btnForHim.TabIndex = 8;
             this.btnForHim.Text = "     For Him";
             this.btnForHim.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -210,10 +206,10 @@
             // pnBtnForHer
             // 
             this.pnBtnForHer.Controls.Add(this.btnForHer);
-            this.pnBtnForHer.Location = new System.Drawing.Point(0, 98);
+            this.pnBtnForHer.Location = new System.Drawing.Point(0, 80);
             this.pnBtnForHer.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnForHer.Name = "pnBtnForHer";
-            this.pnBtnForHer.Size = new System.Drawing.Size(333, 49);
+            this.pnBtnForHer.Size = new System.Drawing.Size(250, 40);
             this.pnBtnForHer.TabIndex = 10;
             // 
             // btnForHer
@@ -228,10 +224,9 @@
             this.btnForHer.ForeColor = System.Drawing.Color.White;
             this.btnForHer.Image = global::shoppingApp.Properties.Resources.woman_30px;
             this.btnForHer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnForHer.Location = new System.Drawing.Point(0, -20);
-            this.btnForHer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnForHer.Location = new System.Drawing.Point(0, -16);
             this.btnForHer.Name = "btnForHer";
-            this.btnForHer.Size = new System.Drawing.Size(333, 89);
+            this.btnForHer.Size = new System.Drawing.Size(250, 72);
             this.btnForHer.TabIndex = 8;
             this.btnForHer.Text = "     For Her";
             this.btnForHer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -240,10 +235,10 @@
             // pnBtnHotDeal
             // 
             this.pnBtnHotDeal.Controls.Add(this.btnHotDeal);
-            this.pnBtnHotDeal.Location = new System.Drawing.Point(0, 49);
+            this.pnBtnHotDeal.Location = new System.Drawing.Point(0, 40);
             this.pnBtnHotDeal.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnHotDeal.Name = "pnBtnHotDeal";
-            this.pnBtnHotDeal.Size = new System.Drawing.Size(333, 49);
+            this.pnBtnHotDeal.Size = new System.Drawing.Size(250, 40);
             this.pnBtnHotDeal.TabIndex = 8;
             // 
             // btnHotDeal
@@ -257,10 +252,9 @@
             this.btnHotDeal.ForeColor = System.Drawing.Color.White;
             this.btnHotDeal.Image = global::shoppingApp.Properties.Resources.discount_30px;
             this.btnHotDeal.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHotDeal.Location = new System.Drawing.Point(0, -20);
-            this.btnHotDeal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHotDeal.Location = new System.Drawing.Point(0, -16);
             this.btnHotDeal.Name = "btnHotDeal";
-            this.btnHotDeal.Size = new System.Drawing.Size(333, 89);
+            this.btnHotDeal.Size = new System.Drawing.Size(250, 72);
             this.btnHotDeal.TabIndex = 8;
             this.btnHotDeal.Text = "     Hot deal";
             this.btnHotDeal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -275,10 +269,10 @@
             this.flPnAdmin.Controls.Add(this.pnBtnManageUsers);
             this.flPnAdmin.Controls.Add(this.pnBtnManageOrders);
             this.flPnAdmin.Controls.Add(this.pnBtnStatistic);
-            this.flPnAdmin.Location = new System.Drawing.Point(0, 98);
+            this.flPnAdmin.Location = new System.Drawing.Point(0, 80);
             this.flPnAdmin.Margin = new System.Windows.Forms.Padding(0);
             this.flPnAdmin.Name = "flPnAdmin";
-            this.flPnAdmin.Size = new System.Drawing.Size(333, 49);
+            this.flPnAdmin.Size = new System.Drawing.Size(250, 40);
             this.flPnAdmin.TabIndex = 10;
             // 
             // pnBtnAdmin
@@ -288,8 +282,8 @@
             this.pnBtnAdmin.Location = new System.Drawing.Point(0, 0);
             this.pnBtnAdmin.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnAdmin.Name = "pnBtnAdmin";
-            this.pnBtnAdmin.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
-            this.pnBtnAdmin.Size = new System.Drawing.Size(333, 49);
+            this.pnBtnAdmin.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.pnBtnAdmin.Size = new System.Drawing.Size(250, 40);
             this.pnBtnAdmin.TabIndex = 9;
             // 
             // pcChevron2
@@ -297,10 +291,9 @@
             this.pcChevron2.FillColor = System.Drawing.Color.Transparent;
             this.pcChevron2.Image = ((System.Drawing.Image)(resources.GetObject("pcChevron2.Image")));
             this.pcChevron2.ImageRotate = 0F;
-            this.pcChevron2.Location = new System.Drawing.Point(264, 9);
-            this.pcChevron2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcChevron2.Location = new System.Drawing.Point(198, 7);
             this.pcChevron2.Name = "pcChevron2";
-            this.pcChevron2.Size = new System.Drawing.Size(40, 37);
+            this.pcChevron2.Size = new System.Drawing.Size(30, 30);
             this.pcChevron2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcChevron2.TabIndex = 6;
             this.pcChevron2.TabStop = false;
@@ -318,10 +311,9 @@
             this.btnAdmin.Image = global::shoppingApp.Properties.Resources.microsoft_admin_30px;
             this.btnAdmin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAdmin.IndicateFocus = true;
-            this.btnAdmin.Location = new System.Drawing.Point(0, -20);
-            this.btnAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdmin.Location = new System.Drawing.Point(0, -16);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(333, 89);
+            this.btnAdmin.Size = new System.Drawing.Size(250, 72);
             this.btnAdmin.TabIndex = 8;
             this.btnAdmin.Text = "     Admin";
             this.btnAdmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -332,10 +324,10 @@
             // pnBtnInsertProds
             // 
             this.pnBtnInsertProds.Controls.Add(this.btnInsertProds);
-            this.pnBtnInsertProds.Location = new System.Drawing.Point(0, 49);
+            this.pnBtnInsertProds.Location = new System.Drawing.Point(0, 40);
             this.pnBtnInsertProds.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnInsertProds.Name = "pnBtnInsertProds";
-            this.pnBtnInsertProds.Size = new System.Drawing.Size(333, 49);
+            this.pnBtnInsertProds.Size = new System.Drawing.Size(250, 40);
             this.pnBtnInsertProds.TabIndex = 9;
             // 
             // btnInsertProds
@@ -351,9 +343,8 @@
             this.btnInsertProds.Image = global::shoppingApp.Properties.Resources.product_30px;
             this.btnInsertProds.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnInsertProds.Location = new System.Drawing.Point(0, 0);
-            this.btnInsertProds.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInsertProds.Name = "btnInsertProds";
-            this.btnInsertProds.Size = new System.Drawing.Size(333, 49);
+            this.btnInsertProds.Size = new System.Drawing.Size(250, 40);
             this.btnInsertProds.TabIndex = 8;
             this.btnInsertProds.Text = "     Insert Products";
             this.btnInsertProds.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -362,10 +353,10 @@
             // pnBtnInsertCates
             // 
             this.pnBtnInsertCates.Controls.Add(this.btnInsertCates);
-            this.pnBtnInsertCates.Location = new System.Drawing.Point(0, 98);
+            this.pnBtnInsertCates.Location = new System.Drawing.Point(0, 80);
             this.pnBtnInsertCates.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnInsertCates.Name = "pnBtnInsertCates";
-            this.pnBtnInsertCates.Size = new System.Drawing.Size(333, 49);
+            this.pnBtnInsertCates.Size = new System.Drawing.Size(250, 40);
             this.pnBtnInsertCates.TabIndex = 10;
             // 
             // btnInsertCates
@@ -379,10 +370,9 @@
             this.btnInsertCates.ForeColor = System.Drawing.Color.White;
             this.btnInsertCates.Image = global::shoppingApp.Properties.Resources.elective_30px;
             this.btnInsertCates.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnInsertCates.Location = new System.Drawing.Point(0, -20);
-            this.btnInsertCates.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInsertCates.Location = new System.Drawing.Point(0, -16);
             this.btnInsertCates.Name = "btnInsertCates";
-            this.btnInsertCates.Size = new System.Drawing.Size(333, 89);
+            this.btnInsertCates.Size = new System.Drawing.Size(250, 72);
             this.btnInsertCates.TabIndex = 8;
             this.btnInsertCates.Text = "     Insert Categories";
             this.btnInsertCates.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -391,10 +381,10 @@
             // pnBtnManageUsers
             // 
             this.pnBtnManageUsers.Controls.Add(this.btnManageUsers);
-            this.pnBtnManageUsers.Location = new System.Drawing.Point(0, 147);
+            this.pnBtnManageUsers.Location = new System.Drawing.Point(0, 120);
             this.pnBtnManageUsers.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnManageUsers.Name = "pnBtnManageUsers";
-            this.pnBtnManageUsers.Size = new System.Drawing.Size(333, 49);
+            this.pnBtnManageUsers.Size = new System.Drawing.Size(250, 40);
             this.pnBtnManageUsers.TabIndex = 11;
             // 
             // btnManageUsers
@@ -408,10 +398,9 @@
             this.btnManageUsers.ForeColor = System.Drawing.Color.White;
             this.btnManageUsers.Image = global::shoppingApp.Properties.Resources.user_30px;
             this.btnManageUsers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManageUsers.Location = new System.Drawing.Point(0, -20);
-            this.btnManageUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManageUsers.Location = new System.Drawing.Point(0, -16);
             this.btnManageUsers.Name = "btnManageUsers";
-            this.btnManageUsers.Size = new System.Drawing.Size(333, 89);
+            this.btnManageUsers.Size = new System.Drawing.Size(250, 72);
             this.btnManageUsers.TabIndex = 8;
             this.btnManageUsers.Text = "     Manage Users";
             this.btnManageUsers.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -420,10 +409,10 @@
             // pnBtnManageOrders
             // 
             this.pnBtnManageOrders.Controls.Add(this.btnManageOrders);
-            this.pnBtnManageOrders.Location = new System.Drawing.Point(0, 196);
+            this.pnBtnManageOrders.Location = new System.Drawing.Point(0, 160);
             this.pnBtnManageOrders.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnManageOrders.Name = "pnBtnManageOrders";
-            this.pnBtnManageOrders.Size = new System.Drawing.Size(333, 49);
+            this.pnBtnManageOrders.Size = new System.Drawing.Size(250, 40);
             this.pnBtnManageOrders.TabIndex = 12;
             // 
             // btnManageOrders
@@ -437,10 +426,9 @@
             this.btnManageOrders.ForeColor = System.Drawing.Color.White;
             this.btnManageOrders.Image = global::shoppingApp.Properties.Resources.bill_30px;
             this.btnManageOrders.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManageOrders.Location = new System.Drawing.Point(0, -20);
-            this.btnManageOrders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManageOrders.Location = new System.Drawing.Point(0, -16);
             this.btnManageOrders.Name = "btnManageOrders";
-            this.btnManageOrders.Size = new System.Drawing.Size(333, 89);
+            this.btnManageOrders.Size = new System.Drawing.Size(250, 72);
             this.btnManageOrders.TabIndex = 8;
             this.btnManageOrders.Text = "     Manage Orders";
             this.btnManageOrders.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -449,10 +437,10 @@
             // pnBtnStatistic
             // 
             this.pnBtnStatistic.Controls.Add(this.btnStatistic);
-            this.pnBtnStatistic.Location = new System.Drawing.Point(0, 245);
+            this.pnBtnStatistic.Location = new System.Drawing.Point(0, 200);
             this.pnBtnStatistic.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnStatistic.Name = "pnBtnStatistic";
-            this.pnBtnStatistic.Size = new System.Drawing.Size(333, 49);
+            this.pnBtnStatistic.Size = new System.Drawing.Size(250, 40);
             this.pnBtnStatistic.TabIndex = 13;
             // 
             // btnStatistic
@@ -466,21 +454,21 @@
             this.btnStatistic.ForeColor = System.Drawing.Color.White;
             this.btnStatistic.Image = global::shoppingApp.Properties.Resources.statistics_30px;
             this.btnStatistic.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnStatistic.Location = new System.Drawing.Point(0, -20);
-            this.btnStatistic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatistic.Location = new System.Drawing.Point(0, -16);
             this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.Size = new System.Drawing.Size(333, 89);
+            this.btnStatistic.Size = new System.Drawing.Size(250, 72);
             this.btnStatistic.TabIndex = 8;
             this.btnStatistic.Text = "     Statistic";
             this.btnStatistic.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
             // 
             // pnBtnProfile
             // 
             this.pnBtnProfile.Controls.Add(this.btnProfile);
-            this.pnBtnProfile.Location = new System.Drawing.Point(0, 147);
+            this.pnBtnProfile.Location = new System.Drawing.Point(0, 120);
             this.pnBtnProfile.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnProfile.Name = "pnBtnProfile";
-            this.pnBtnProfile.Size = new System.Drawing.Size(333, 49);
+            this.pnBtnProfile.Size = new System.Drawing.Size(250, 40);
             this.pnBtnProfile.TabIndex = 15;
             // 
             // btnProfile
@@ -494,10 +482,9 @@
             this.btnProfile.ForeColor = System.Drawing.Color.White;
             this.btnProfile.Image = global::shoppingApp.Properties.Resources.user_30px;
             this.btnProfile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnProfile.Location = new System.Drawing.Point(0, -20);
-            this.btnProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProfile.Location = new System.Drawing.Point(0, -16);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(333, 89);
+            this.btnProfile.Size = new System.Drawing.Size(250, 72);
             this.btnProfile.TabIndex = 8;
             this.btnProfile.Text = "     Profile";
             this.btnProfile.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -506,10 +493,10 @@
             // pnBtnChat
             // 
             this.pnBtnChat.Controls.Add(this.btnChat);
-            this.pnBtnChat.Location = new System.Drawing.Point(0, 196);
+            this.pnBtnChat.Location = new System.Drawing.Point(0, 160);
             this.pnBtnChat.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnChat.Name = "pnBtnChat";
-            this.pnBtnChat.Size = new System.Drawing.Size(333, 49);
+            this.pnBtnChat.Size = new System.Drawing.Size(250, 40);
             this.pnBtnChat.TabIndex = 12;
             // 
             // btnChat
@@ -523,10 +510,9 @@
             this.btnChat.ForeColor = System.Drawing.Color.White;
             this.btnChat.Image = global::shoppingApp.Properties.Resources.chat_30px;
             this.btnChat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnChat.Location = new System.Drawing.Point(0, -20);
-            this.btnChat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChat.Location = new System.Drawing.Point(0, -16);
             this.btnChat.Name = "btnChat";
-            this.btnChat.Size = new System.Drawing.Size(333, 89);
+            this.btnChat.Size = new System.Drawing.Size(250, 72);
             this.btnChat.TabIndex = 8;
             this.btnChat.Text = "     Chat";
             this.btnChat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -535,10 +521,10 @@
             // pnBtnAboutUs
             // 
             this.pnBtnAboutUs.Controls.Add(this.btnAboutUs);
-            this.pnBtnAboutUs.Location = new System.Drawing.Point(0, 245);
+            this.pnBtnAboutUs.Location = new System.Drawing.Point(0, 200);
             this.pnBtnAboutUs.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnAboutUs.Name = "pnBtnAboutUs";
-            this.pnBtnAboutUs.Size = new System.Drawing.Size(333, 49);
+            this.pnBtnAboutUs.Size = new System.Drawing.Size(250, 40);
             this.pnBtnAboutUs.TabIndex = 14;
             // 
             // btnAboutUs
@@ -552,10 +538,9 @@
             this.btnAboutUs.ForeColor = System.Drawing.Color.White;
             this.btnAboutUs.Image = global::shoppingApp.Properties.Resources.info_30px;
             this.btnAboutUs.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAboutUs.Location = new System.Drawing.Point(0, -20);
-            this.btnAboutUs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAboutUs.Location = new System.Drawing.Point(0, -16);
             this.btnAboutUs.Name = "btnAboutUs";
-            this.btnAboutUs.Size = new System.Drawing.Size(333, 89);
+            this.btnAboutUs.Size = new System.Drawing.Size(250, 72);
             this.btnAboutUs.TabIndex = 8;
             this.btnAboutUs.Text = "     About us";
             this.btnAboutUs.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -564,10 +549,10 @@
             // pnBtnOrders
             // 
             this.pnBtnOrders.Controls.Add(this.btnOrders);
-            this.pnBtnOrders.Location = new System.Drawing.Point(0, 294);
+            this.pnBtnOrders.Location = new System.Drawing.Point(0, 240);
             this.pnBtnOrders.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnOrders.Name = "pnBtnOrders";
-            this.pnBtnOrders.Size = new System.Drawing.Size(333, 49);
+            this.pnBtnOrders.Size = new System.Drawing.Size(250, 40);
             this.pnBtnOrders.TabIndex = 13;
             // 
             // btnOrders
@@ -581,10 +566,9 @@
             this.btnOrders.ForeColor = System.Drawing.Color.White;
             this.btnOrders.Image = global::shoppingApp.Properties.Resources.purchase_order_30px;
             this.btnOrders.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnOrders.Location = new System.Drawing.Point(0, -20);
-            this.btnOrders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrders.Location = new System.Drawing.Point(0, -16);
             this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Size = new System.Drawing.Size(333, 89);
+            this.btnOrders.Size = new System.Drawing.Size(250, 72);
             this.btnOrders.TabIndex = 8;
             this.btnOrders.Text = "     Your oders";
             this.btnOrders.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -593,10 +577,10 @@
             // pnBtnLogout
             // 
             this.pnBtnLogout.Controls.Add(this.btnLogout);
-            this.pnBtnLogout.Location = new System.Drawing.Point(0, 343);
+            this.pnBtnLogout.Location = new System.Drawing.Point(0, 280);
             this.pnBtnLogout.Margin = new System.Windows.Forms.Padding(0);
             this.pnBtnLogout.Name = "pnBtnLogout";
-            this.pnBtnLogout.Size = new System.Drawing.Size(333, 49);
+            this.pnBtnLogout.Size = new System.Drawing.Size(250, 40);
             this.pnBtnLogout.TabIndex = 13;
             // 
             // btnLogout
@@ -610,10 +594,9 @@
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = global::shoppingApp.Properties.Resources.logout_rounded_left_30px;
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLogout.Location = new System.Drawing.Point(0, -20);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Location = new System.Drawing.Point(0, -16);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(333, 89);
+            this.btnLogout.Size = new System.Drawing.Size(250, 72);
             this.btnLogout.TabIndex = 8;
             this.btnLogout.Text = "     Logout";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -635,10 +618,9 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(68, 16);
-            this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbName.Location = new System.Drawing.Point(51, 13);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(80, 24);
+            this.lbName.Size = new System.Drawing.Size(67, 18);
             this.lbName.TabIndex = 1;
             this.lbName.Text = "SHON |";
             // 
@@ -646,10 +628,9 @@
             // 
             this.lbFlows.AutoSize = true;
             this.lbFlows.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFlows.Location = new System.Drawing.Point(157, 17);
-            this.lbFlows.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbFlows.Location = new System.Drawing.Point(118, 14);
             this.lbFlows.Name = "lbFlows";
-            this.lbFlows.Size = new System.Drawing.Size(62, 24);
+            this.lbFlows.Size = new System.Drawing.Size(49, 18);
             this.lbFlows.TabIndex = 2;
             this.lbFlows.Text = "Home";
             // 
@@ -657,10 +638,10 @@
             // 
             this.lbHelloMess.AutoSize = true;
             this.lbHelloMess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHelloMess.Location = new System.Drawing.Point(1136, 16);
-            this.lbHelloMess.Margin = new System.Windows.Forms.Padding(4, 0, 13, 0);
+            this.lbHelloMess.Location = new System.Drawing.Point(852, 13);
+            this.lbHelloMess.Margin = new System.Windows.Forms.Padding(3, 0, 10, 0);
             this.lbHelloMess.Name = "lbHelloMess";
-            this.lbHelloMess.Size = new System.Drawing.Size(126, 25);
+            this.lbHelloMess.Size = new System.Drawing.Size(103, 20);
             this.lbHelloMess.TabIndex = 7;
             this.lbHelloMess.Text = "Hi, Lastname";
             // 
@@ -676,9 +657,8 @@
             this.navBar.Controls.Add(this.btnNavbar);
             this.navBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.navBar.Location = new System.Drawing.Point(0, 0);
-            this.navBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.navBar.Name = "navBar";
-            this.navBar.Size = new System.Drawing.Size(1487, 55);
+            this.navBar.Size = new System.Drawing.Size(1115, 45);
             this.navBar.TabIndex = 3;
             this.navBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.navBar_MouseDown);
             this.navBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.navBar_MouseMove);
@@ -695,11 +675,10 @@
             this.btnCart.ForeColor = System.Drawing.Color.White;
             this.btnCart.Image = global::shoppingApp.Properties.Resources.shopping_cart_30px;
             this.btnCart.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnCart.Location = new System.Drawing.Point(1352, 4);
-            this.btnCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCart.Location = new System.Drawing.Point(1014, 3);
             this.btnCart.Name = "btnCart";
             this.btnCart.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnCart.Size = new System.Drawing.Size(53, 49);
+            this.btnCart.Size = new System.Drawing.Size(40, 40);
             this.btnCart.TabIndex = 4;
             this.btnCart.Click += new System.EventHandler(this.btnCart_Click);
             // 
@@ -708,11 +687,10 @@
             this.pcAva.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcAva.FillColor = System.Drawing.Color.Gray;
             this.pcAva.ImageRotate = 0F;
-            this.pcAva.Location = new System.Drawing.Point(1291, 4);
-            this.pcAva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcAva.Location = new System.Drawing.Point(968, 3);
             this.pcAva.Name = "pcAva";
             this.pcAva.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pcAva.Size = new System.Drawing.Size(53, 49);
+            this.pcAva.Size = new System.Drawing.Size(40, 40);
             this.pcAva.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcAva.TabIndex = 3;
             this.pcAva.TabStop = false;
@@ -731,11 +709,10 @@
             this.btnExit.HoverState.FillColor = System.Drawing.Color.LightGray;
             this.btnExit.Image = global::shoppingApp.Properties.Resources.exit_30px;
             this.btnExit.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnExit.Location = new System.Drawing.Point(1413, 4);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Location = new System.Drawing.Point(1060, 3);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnExit.Size = new System.Drawing.Size(53, 49);
+            this.btnExit.Size = new System.Drawing.Size(40, 40);
             this.btnExit.TabIndex = 6;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -747,25 +724,23 @@
             this.btnNavbar.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnNavbar.ImageRotate = 0F;
             this.btnNavbar.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnNavbar.Location = new System.Drawing.Point(7, 2);
-            this.btnNavbar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNavbar.Location = new System.Drawing.Point(5, 2);
             this.btnNavbar.Name = "btnNavbar";
             this.btnNavbar.PressedState.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNavbar.Size = new System.Drawing.Size(53, 49);
+            this.btnNavbar.Size = new System.Drawing.Size(40, 40);
             this.btnNavbar.TabIndex = 0;
             this.btnNavbar.Click += new System.EventHandler(this.btnNavbar_Click);
             // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1487, 812);
+            this.ClientSize = new System.Drawing.Size(1115, 660);
             this.Controls.Add(this.sideBar);
             this.Controls.Add(this.navBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SHON";
